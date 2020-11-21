@@ -62,13 +62,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         drawer: Drawer(),
         appBar: AppBar(
           actions: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: InkWell(
                 onTap: () {
                   setState(() {
@@ -84,8 +87,8 @@ class _MyAppState extends State<MyApp> {
               ),
             )
           ],
-          elevation: 0,
-          backgroundColor: Colors.black,
+          elevation: 4,
+          backgroundColor: Colors.blue,
           title: showVol
               ? Slider(
                   value: audioManagerInstance.volume ?? 0,
